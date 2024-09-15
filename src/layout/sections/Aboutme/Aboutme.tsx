@@ -29,6 +29,7 @@ export const Aboutme = () => {
 };
 
 const StyledAboutme = styled.div`
+    //min-height: 100vh;
     background-color: #f3f2d7;
 
 `
