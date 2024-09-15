@@ -35,11 +35,17 @@ export const Progect = (props: ProgectPropsType) => {
     );
 };
 
-const StyledProject = styled.section `
-    
+const StyledProject = styled.div`
+    background-color: #b8bfbd;
+    max-width: 522px;
+    width: 100%;
+
 `
 
 const Images = styled.img`
+    width: 100%;
+    height: 388px;
+    object-fit: cover;
 `
 
 const Title = styled.h3`

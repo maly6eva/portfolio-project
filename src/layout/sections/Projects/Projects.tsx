@@ -23,19 +23,16 @@ export const Projects = () => {
             <FlexWrapper>
 
                 <Wrapper>
-                    <Progect src={projimg} title={'TITLE PROJECT'}/>
+
+                    <Progect src={projimg} title={'TITLE PROJECT'} text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
                     <Menu menuItems={itemname}/>
-
-
-                    <Progect text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
 
                 </Wrapper>
 
                 <Wrapper>
-                    <Progect src={projimg} title={'I N S I G H T G R A M'}/>
-                    <Menu menuItems={itemproject}/>
 
-                    <Progect text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
+                    <Progect src={projimg} title={'I N S I G H T G R A M'} text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
+                    <Menu menuItems={itemproject}/>
 
                 </Wrapper>
 
@@ -50,6 +47,7 @@ export const Projects = () => {
 const StyledProjects = styled.section`
     min-height: 100vh;
     background-color: #d9dbf4;
+    margin: 0 auto;
 `
 
 
