@@ -8,8 +8,6 @@ import {Menu} from "../../../components/Menu/Menu";
 
 
 
-const itemname = ['Javascript', 'PostgreSQL', 'React', 'redux']
-const itemproject = ['Javascript', 'PostgreSQL', 'React']
 
 
 
@@ -24,15 +22,23 @@ export const Projects = () => {
 
                 <Wrapper>
 
-                    <Progect src={projimg} title={'TITLE PROJECT'} text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
-                    <Menu menuItems={itemname}/>
+                    <Progect
+                        src={projimg}
+                        title={'TITLE PROJECT'}
+                        tags={['Javascript', 'PostgreSQL', 'React', 'redux' ]}
+                        text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}
+                    />
+
 
                 </Wrapper>
 
                 <Wrapper>
 
-                    <Progect src={projimg} title={'I N S I G H T G R A M'} text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
-                    <Menu menuItems={itemproject}/>
+                    <Progect src={projimg}
+                             title={'I N S I G H T G R A M'}
+                             tags={['Javascript', 'PostgreSQL', 'React' ]}
+                             text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
+
 
                 </Wrapper>
 

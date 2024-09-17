@@ -3,14 +3,12 @@ import styled from "styled-components";
 import {Menu} from "../../../../components/Menu/Menu";
 
 
-
-
 type ProgectPropsType = {
     src?: string
     text?: string
     title?: string
     button?: string
-
+    tags?: string[];
 }
 
 
@@ -22,11 +20,15 @@ export const Progect = (props: ProgectPropsType) => {
             <Images src={props.src} alt=''/>
             <Title>{props.title}</Title>
 
+            {props.tags?.map((tag) => (
+                <React.Fragment key={tag}>
+                    <button>{tag}</button>
+                </React.Fragment>
+            ) )}
+
             <Button>
                 <ButtonLink href="">{props.button}</ButtonLink>
             </Button>
-
-
 
 
             <Text>{props.text}</Text>

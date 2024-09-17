@@ -14,7 +14,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    //min-height: 100vh;
+    //min-height: 20vh;
     background-color: aquamarine;
 `
 
