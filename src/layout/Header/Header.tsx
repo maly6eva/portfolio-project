@@ -21,7 +21,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    min-height: 20vh;
+    //min-height: 20vh;
 
 `
 
