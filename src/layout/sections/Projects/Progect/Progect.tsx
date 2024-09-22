@@ -51,13 +51,20 @@ const Images = styled.img`
 `
 
 const Title = styled.h3`
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; /* 108.333% */
+    letter-spacing: 0.96px;
 `
 const Button = styled.button` 
     
 `
 const ButtonLink = styled.a` 
     
+    
 `
+
 
 
 
