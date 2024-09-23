@@ -13,7 +13,6 @@ export const FooterTitle = (props: FooterTitleProps ) => {
         <StyleFooter>
             <Icon width={'38px'} height={'38px'} viewBox={'0 0 38px 38px'} iconsId={props.iconsId}/>
             <FooterText>{props.text}</FooterText>
-
         </StyleFooter>
     );
 };
@@ -22,7 +21,6 @@ export const FooterTitle = (props: FooterTitleProps ) => {
 
 const StyleFooter = styled.div`
     text-align: center;
-    
 `
 
 const FooterText = styled.p`
@@ -34,6 +32,4 @@ const FooterText = styled.p`
     line-height: 11.105px; /* 92.544% */
     letter-spacing: 1.44px;
     text-transform: uppercase;
-  
-    
 `

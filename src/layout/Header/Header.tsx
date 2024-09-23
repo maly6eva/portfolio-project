@@ -1,48 +1,46 @@
 import React from 'react';
 import {Menu} from "../../components/Menu/Menu";
 import styled from "styled-components";
-import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
+import {theme} from "../../styles/Theme";
 
 
 export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <FlexWrapper align={'center'} justify={'end'} gap={'87px'}>
-                    <Menu item={'Home'}/>
-                    <Menu item={'Projects'}/>
-                    <Menu item={'Contact'}/>
+                <FlexWrapper align={'center'} justify={'space-between'}>
+                    <FlexWrapper justify={'start'}>
+                        <Menu item={'Home'}/>
+                    </FlexWrapper>
+                    <FlexWrapper>
+                        <Menu item={'Projects'} />
+                        <Menu item={'Contact'}/>
+                    </FlexWrapper>
                 </FlexWrapper>
-
             </Container>
         </StyledHeader>
     );
 };
 
 const StyledHeader = styled.header`
-    //min-height: 20vh;
-
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    //right: 0;
+    //z-index: 999;
 `
 
-
-
-// const items = ['Home','Projects','Contact']
-//
-// export const Header = () => {
-//     return (
-//         <StyledHeader>
-//             <Container>
-//                 {/*<FlexWrapper justify={'space-between'} align={'center'}>*/}
-//
-//                 <Menu menuItems={items}/>
-//                 {/*</FlexWrapper>*/}
-//             </Container>
-//         </StyledHeader>
-//     );
-// };
-//
-// const StyledHeader = styled.header`
-//     //min-height: 20vh;
-//
-// `
+const Container = styled.div`
+    padding: 28px 43px;
+    max-width: 1130px;
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    border: 1px solid red;
+    text-align: start;
+    
+    div:hover{
+        color: ${theme.colors.paddingBg};
+    }
+`

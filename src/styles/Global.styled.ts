@@ -28,10 +28,7 @@ export const GlobalStyle = createGlobalStyle`
             list-style: none;
     }
     
-    //button {
-    //    background-color: unset;
-    //    border: none;
-    //}
+   
 
 
     section, div, header, footer{

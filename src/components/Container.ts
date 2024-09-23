@@ -8,5 +8,4 @@ export const Container = styled.div`
     margin: 0 auto;
     border: 1px solid red;
     text-align: start;
-
 `
