@@ -64,6 +64,6 @@ const StyledText = styled.p`
     font-weight: 400;
     line-height: 26px; /* 144.444% */
     letter-spacing: 0.72px;
-    max-width: 845px;
+    max-width: 865px;
 `
 

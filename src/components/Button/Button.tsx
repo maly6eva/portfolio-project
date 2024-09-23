@@ -4,7 +4,7 @@ import {theme} from "../../styles/Theme";
 
 
 type menuItemsProps = {
-    item: string;
+    item?: string;
 
 }
 
@@ -34,7 +34,11 @@ const StyledButton = styled.nav`
         padding: 12px 20px 13px 20px;
         border-radius: 6px;
         background-image:  linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+       
+    }
+    a{
         color: ${theme.colors.paddingBg};
     }
+    
 
 `

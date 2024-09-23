@@ -3,7 +3,11 @@ export const theme = {
         accent: '#041F31',
         cardBg: '#222525',
         textBg: '#BDEBEA',
-        paddingBg: '#252728'
+        paddingBg: '#252728',
+        textInput: '#919B9B',
+        textareaBorder: '#00F5A0'
+
+
     }
 
 }

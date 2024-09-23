@@ -34,8 +34,14 @@ const StyledMenu = styled.nav`
         padding: 12px 20px 13px 20px;
         border-radius: 6px;
         background-image:  linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
-        background-color: ${theme.colors.paddingBg};
+       
+        
     }
+    
+    a:hover {
+       color: ${theme.colors.paddingBg};
+    }
+    
 
 `
 

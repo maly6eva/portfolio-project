@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {Menu} from "../../../../components/Menu/Menu";
+import {theme} from "../../../../styles/Theme";
+// import {Button} from "../../../../components/Button/Button";
 
 
 type ProgectPropsType = {
@@ -20,11 +22,15 @@ export const Progect = (props: ProgectPropsType) => {
             <Images src={props.src} alt=''/>
             <Title>{props.title}</Title>
 
+            <ButtonsGroup>
             {props.tags?.map((tag) => (
                 <React.Fragment key={tag}>
-                    <button>{tag}</button>
+                    <button>
+                        <a href="#">{tag}</a>
+                    </button>
                 </React.Fragment>
             ) )}
+            </ButtonsGroup>
 
             <Button>
                 <ButtonLink href="">{props.button}</ButtonLink>
@@ -38,10 +44,9 @@ export const Progect = (props: ProgectPropsType) => {
 };
 
 const StyledProject = styled.div`
-    background-color: #b8bfbd;
+    background-color: ${theme.colors.cardBg}
     max-width: 522px;
     width: 100%;
-
 `
 
 const Images = styled.img`
@@ -51,25 +56,51 @@ const Images = styled.img`
 `
 
 const Title = styled.h3`
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 26px; /* 108.333% */
     letter-spacing: 0.96px;
+   margin: 29px 0 11px;
 `
-const Button = styled.button` 
+const Button = styled.button`
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.64px;
+    background-color: crimson;
+
+`
+const ButtonLink = styled.a`
+   
+    
     
 `
-const ButtonLink = styled.a` 
-    
-    
-`
-
-
-
-
 
 
 const Text = styled.p`
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.64px;
 `
 
+
+const ButtonsGroup = styled.div`
+   
+    button {
+        margin: 8px auto 8px;
+        list-style: none;
+        padding: 12px 20px 13px 20px;
+        border-radius: 6px;
+        background-image:  linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+      
+        
+    }
+    a{
+        color: ${theme.colors.paddingBg};
+    }
+
+`
