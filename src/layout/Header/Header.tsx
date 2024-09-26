@@ -13,10 +13,10 @@ export const Header = () => {
                     <FlexWrapper justify={'start'}>
                         <Menu item={'Home'}/>
                     </FlexWrapper>
-                    <FlexWrapper>
+                    <FlexWrapperrr>
                         <Menu item={'Projects'} />
                         <Menu item={'Contact'}/>
-                    </FlexWrapper>
+                    </FlexWrapperrr>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -29,6 +29,8 @@ const StyledHeader = styled.header`
     //left: 0;
     //right: 0;
     //z-index: 999;
+   
+   
 `
 
 const Container = styled.div`
@@ -39,8 +41,26 @@ const Container = styled.div`
     margin: 0 auto;
     border: 1px solid red;
     text-align: start;
+
     
     div:hover{
         color: ${theme.colors.paddingBg};
     }
+
+    @media ${theme.media.tablet} {
+        display: flex;
+        flex-direction: column;
+        
+    }
+`
+const FlexWrapperrr = styled.div`
+    display: flex;
+    
+    
+
+ 
+
+
+
+  
 `

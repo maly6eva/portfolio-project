@@ -38,6 +38,8 @@ const StyledMenu = styled.nav`
              background-image:  linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
         }
 
+       
+
 `
 
 

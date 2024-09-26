@@ -6,12 +6,13 @@ import Icon from "../../../components/Icon/Icon";
 import {Container} from "../../../components/Container";
 import {Menu} from "../../../components/Menu/Menu";
 import {Button} from "../../../components/Button/Button";
+import {theme} from "../../../styles/Theme";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'}>
+                <FlexWrapper align={'center'} justify={'space-between'} wrap={'wrap-reverse'}>
                     <div>
                         <MainTitle>WEB DEVELOPER</MainTitle>
                         <Name>Ksenia Malysheva</Name>
@@ -19,7 +20,11 @@ export const Main = () => {
                         <Button item={'Contact Me'}/>
                     </div>
 
-                    <Photo src={photo} alt="photo"/>
+                    <PhotoWrapper>
+                        <Photo src={photo} alt="photo"/>
+                    </PhotoWrapper>
+
+
 
                 </FlexWrapper>
                 {/*<FlexWrapper align={'center'} justify={'space-around'}>*/}
@@ -63,9 +68,24 @@ const SmallText = styled.p`
     letter-spacing: 0.64px;
     //padding-bottom: 29px;
 `
-
+const PhotoWrapper = styled.div`
+    display: flex;
+    // @media ${theme.media.mobile} {
+    //     width: 314px;
+    //     height: 214px;
+    //     flex-wrap: wrap;
+    // }
+}
+`
 const Photo = styled.img`
     width: 533px;
     height: 399px;
     object-fit: cover;
+    
+    
+    @media ${theme.media.mobile} {
+        width: 319px;
+        height: 239px;
+        flex-wrap: wrap;
+    }
 `
