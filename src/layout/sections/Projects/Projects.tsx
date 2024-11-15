@@ -9,6 +9,15 @@ import {Container} from "../../../components/Container";
 
 
 export const Projects = () => {
+    const title1 = 'TITLE PROJECT'
+    const title2 = 'I N S I G H T G R A M'
+    const text1 = 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
+   const text2 = 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
+
+
+    const tag1 = ['Javascript', 'PostgreSQL', 'React', 'redux']
+    const tag2 = ['Javascript', 'PostgreSQL', 'React']
+
     return (
         <StyledProjects>
 
@@ -19,17 +28,17 @@ export const Projects = () => {
                     <Wrapper>
                         <Progect
                             src={projimg}
-                            title={'TITLE PROJECT'}
-                            tags={['Javascript', 'PostgreSQL', 'React', 'redux']}
-                            text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}
+                            title={title1}
+                            tags={tag1}
+                            text={text1}
                         />
 
                     </Wrapper>
                     <Wrapper>
                         <Progect src={projimg}
-                                 title={'I N S I G H T G R A M'}
-                                 tags={['Javascript', 'PostgreSQL', 'React']}
-                                 text={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'}/>
+                                 title={title2}
+                                 tags={tag2}
+                                 text={text2}/>
 
 
                     </Wrapper>

@@ -7,12 +7,13 @@ import {Container} from "../../../components/Container";
 import {Menu} from "../../../components/Menu/Menu";
 import {Button} from "../../../components/Button/Button";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'} wrap={'wrap-reverse'}>
+                <FlexWrapper align={'center'} justify={'space-around'} wrap={'wrap'}>
                     <div>
                         <MainTitle>WEB DEVELOPER</MainTitle>
                         <Name>Ksenia Malysheva</Name>
@@ -27,9 +28,9 @@ export const Main = () => {
 
 
                 </FlexWrapper>
-                {/*<FlexWrapper align={'center'} justify={'space-around'}>*/}
-                {/*/!*    <Icon iconsId={'arrow'} />*!/ псевдо*/}
-                {/*</FlexWrapper>*/}
+                <FlexWrapper align={'center'} justify={'space-around'}>
+                   <Icon iconsId={'arrow'} />
+                </FlexWrapper>
             </Container>
         </StyledMain>
 
@@ -45,37 +46,40 @@ const StyledMain = styled.section`
     //background-color: #dedae6;
 `
 const MainTitle = styled.h1`
-    font-family: Tinos, sans-serif;
+    font-family: 'Tinos', sans-serif;
         font-size: 20px;
         font-weight: 400;
     
     `
 const Name = styled.h2`
-        font-size: 72px;
-        font-weight: 600;
+    ${font({family: "'Montserrat', sans-serif", weight: 600, Fmax: 72, Fmin: 40})}
+  
         background-image:  linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
         color: transparent;
         -webkit-background-clip: text;
         padding-bottom: 11px;
-        margin: 10px 0;
+        margin: 10px 0 11px;
+
+
+
+    @media ${theme.media.mobile} {
+        margin: 13px 0 16px;
+     
+    }
     `
     
 const SmallText = styled.p`
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
+    ${font({family: "'Montserrat', sans-serif", weight: 400, Fmax: 16, Fmin: 16})}
+    //font-size: 16px;
+    //font-style: normal;
+    //font-weight: 400;
+    //line-height: 24px; /* 150% */
     letter-spacing: 0.64px;
     //padding-bottom: 29px;
 `
 const PhotoWrapper = styled.div`
     display: flex;
-    // @media ${theme.media.mobile} {
-    //     width: 314px;
-    //     height: 214px;
-    //     flex-wrap: wrap;
-    // }
-}
+
 `
 const Photo = styled.img`
     width: 533px;
@@ -86,6 +90,6 @@ const Photo = styled.img`
     @media ${theme.media.mobile} {
         width: 319px;
         height: 239px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; 
     }
 `

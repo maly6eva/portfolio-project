@@ -16,14 +16,14 @@ type ProgectPropsType = {
 
 
 
-export const Progect = (props: ProgectPropsType) => {
+export const Progect = ({src, text, title, tags, button}: ProgectPropsType) => {
     return (
         <StyledProject>
-            <Images src={props.src} alt=''/>
-            <Title>{props.title}</Title>
+            <Images src={src} alt=''/>
+            <Title>{title}</Title>
 
             <ButtonsGroup>
-            {props.tags?.map((tag) => (
+            {tags?.map((tag) => (
                 <React.Fragment key={tag}>
                     <button>
                         <a href="#">{tag}</a>
@@ -33,11 +33,11 @@ export const Progect = (props: ProgectPropsType) => {
             </ButtonsGroup>
 
             <Button>
-                <ButtonLink href="">{props.button}</ButtonLink>
+                <ButtonLink href="">{button}</ButtonLink>
             </Button>
 
 
-            <Text>{props.text}</Text>
+            <Text>{text}</Text>
 
         </StyledProject>
     );

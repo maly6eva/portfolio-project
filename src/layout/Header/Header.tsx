@@ -10,13 +10,13 @@ export const Header = () => {
         <StyledHeader>
             <Container>
                 <FlexWrapper align={'center'} justify={'space-between'}>
-                    <FlexWrapper justify={'start'}>
+
                         <Menu item={'Home'}/>
-                    </FlexWrapper>
-                    <FlexWrapperrr>
+
+                    <FlexWrapper>
                         <Menu item={'Projects'} />
                         <Menu item={'Contact'}/>
-                    </FlexWrapperrr>
+                    </FlexWrapper>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -39,7 +39,7 @@ const Container = styled.div`
     width: 100%;
     min-height: 100%;
     margin: 0 auto;
-    border: 1px solid red;
+
     text-align: start;
 
     

@@ -7,6 +7,8 @@ import {Skills} from "./layout/sections/Skills/Skills";
 import {Projects} from "./layout/sections/Projects/Projects";
 import {Contacts} from "./layout/sections/Contacts/Contacts";
 import {Footer} from "./layout/Footer/Footer";
+import {Todolist} from "./layout/sections/Todolist/Todolist";
+
 
 
 function App() {
@@ -16,9 +18,11 @@ function App() {
             <Main/>
             <Aboutme/>
             <Projects/>
+            <Todolist/>
             <Skills/>
             <Contacts/>
             <Footer/>
+
         </div>
     );
 }
