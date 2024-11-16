@@ -1,39 +1,36 @@
 import React from 'react';
-import {Todolist} from "./Todolist";
 import styled from "styled-components";
-
+import {FilterValues} from "./Todolist";
 
 type TodolistPropsType = {
     id: number,
     skil: string,
     isDone: boolean,
-}
 
+
+}
 
 type TodolistAppType = {
     title: string,
     todolist: TodolistPropsType[]
+    removeTasks: (id: number) => void
+    changeFilter: (value: FilterValues) => void
 }
 
-export const TodolistApp = ({title, todolist}: TodolistAppType) => {
+export const TodolistApp = ({title, todolist, removeTasks, changeFilter}: TodolistAppType) => {
 
-    const todol = todolist.map((el) => {
+    const todo = todolist.map((el) => {
         return (
             <>
                 <li key={el.id}>
                     <input type="checkbox" checked={el.isDone}/> <span>{el.skil}</span>
-                </li>
-                <li key={el.id}>
-                    <input type="checkbox" checked={el.isDone}/> <span>{el.skil}</span>
+                    <button onClick={() => {removeTasks(el.id)}}>x
+                    </button>
                 </li>
 
             </>
-
         )
-
-
     })
-
 
     return (
         <div>
@@ -44,12 +41,12 @@ export const TodolistApp = ({title, todolist}: TodolistAppType) => {
                     <button>+</button>
                 </Inputdiv>
                 <ul>
-                    {todol}
+                    {todo}
                 </ul>
                 <ButtonDiv>
-                    <button>All</button>
-                    <button>Active</button>
-                    <button>Completed</button>
+                    <button onClick={() => { changeFilter('All')}}>All</button>
+                    <button onClick={() => { changeFilter('Active')}}>Active</button>
+                    <button onClick={() => { changeFilter('Completed')}}>Completed</button>
                 </ButtonDiv>
             </TodolistAp>
         </div>

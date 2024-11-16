@@ -13,9 +13,6 @@ type ProgectPropsType = {
     tags?: string[];
 }
 
-
-
-
 export const Progect = ({src, text, title, tags, button}: ProgectPropsType) => {
     return (
         <StyledProject>
@@ -35,7 +32,6 @@ export const Progect = ({src, text, title, tags, button}: ProgectPropsType) => {
             <Button>
                 <ButtonLink href="">{button}</ButtonLink>
             </Button>
-
 
             <Text>{text}</Text>
 
@@ -73,12 +69,8 @@ const Button = styled.button`
 
 `
 const ButtonLink = styled.a`
-   
-    
     
 `
-
-
 const Text = styled.p`
     font-size: 16px;
     font-style: normal;

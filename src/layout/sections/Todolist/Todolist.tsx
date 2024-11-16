@@ -1,45 +1,50 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {TodolistApp} from "./TodolistApp";
 
+
+export type FilterValues = 'All' | 'Active' | 'Completed'
+
 export const Todolist = () => {
     const text1 = 'What to learn'
-    const text2 = 'What to teach'
-    const text3 = 'Always learn'
 
-    const todo = [
+    let  [todo, setTodo] = useState ([
         {id: 1, skil: 'HTML/CSS', isDone: false},
         {id: 2, skil: 'react', isDone: true},
         {id: 3, skil: 'redux', isDone: true},
 
-    ]
+    ])
 
-    const todo2 = [
-        {id: 1, skil: 'PostgreSQL', isDone: true},
-        {id: 2, skil: 'typescript', isDone: true},
-        {id: 3, skil: 'JavaScript', isDone: false},
-        {id: 3, skil: 'react nactive', isDone: false},
-    ]
+    let [filter, setFilter] = useState<FilterValues>('All')
 
+    function removeTasks(id: number) {
+        let resultTasks = todo.filter((t) => {
+            return t.id !== id
+        })
+        setTodo(resultTasks)
+    }
 
-    const todo3 = [
-        {id: 1, skil: 'Nest JS', isDone: true},
-        {id: 2, skil: 'Docker', isDone: true},
-        {id: 3, skil: 'react js', isDone: false},
-        {id: 3, skil: 'git', isDone: false},
-        {id: 3, skil: 'react nactive', isDone: false},
-    ]
+    function changeFilter(value: FilterValues) {
+        setFilter(value)
+    }
+
+    let todoForTodolist = todo;
+    if(filter === 'Completed') {
+        todoForTodolist = todo.filter(t => t.isDone === true)
+    }
+
+    if(filter === 'Active') {
+        todoForTodolist = todo.filter(t => t.isDone === false)
+    }
 
 
     return (
         <Todolistsection>
             <Container>
                 <FlexWrapper direction={'row'} justify={'space-between'}>
-                    <TodolistApp title={text1} todolist={todo} />
-                    <TodolistApp title={text2} todolist={todo2}/>
-                    <TodolistApp title={text3}  todolist={todo3}/>
+                    <TodolistApp title={text1} todolist={todoForTodolist} removeTasks={removeTasks} changeFilter={changeFilter} />
                  </FlexWrapper>
             </Container>
 

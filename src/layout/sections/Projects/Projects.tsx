@@ -18,6 +18,8 @@ export const Projects = () => {
     const tag1 = ['Javascript', 'PostgreSQL', 'React', 'redux']
     const tag2 = ['Javascript', 'PostgreSQL', 'React']
 
+
+
     return (
         <StyledProjects>
 
@@ -39,7 +41,6 @@ export const Projects = () => {
                                  title={title2}
                                  tags={tag2}
                                  text={text2}/>
-
 
                     </Wrapper>
                 </FlexWrapper>
