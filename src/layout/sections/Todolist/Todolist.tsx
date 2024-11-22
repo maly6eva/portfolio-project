@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {TodolistApp} from "./TodolistApp";
+import {v1} from "uuid";
 
 
 export type FilterValues = 'All' | 'Active' | 'Completed'
@@ -11,15 +12,21 @@ export const Todolist = () => {
     const text1 = 'What to learn'
 
     let  [todo, setTodo] = useState ([
-        {id: 1, skil: 'HTML/CSS', isDone: false},
-        {id: 2, skil: 'react', isDone: true},
-        {id: 3, skil: 'redux', isDone: true},
+        {id: v1(), skil: 'HTML/CSS', isDone: false},
+        {id: v1(), skil: 'react', isDone: true},
+        {id: v1(), skil: 'redux', isDone: true},
 
     ])
 
     let [filter, setFilter] = useState<FilterValues>('All')
 
-    function removeTasks(id: number) {
+    function addTasks(title: string) {
+        const newTask = {id: v1(), skil: title, isDone: true}
+        const newTasks = [newTask, ...todo]
+        setTodo(newTasks)
+    }
+
+    function removeTasks(id: string) {
         let resultTasks = todo.filter((t) => {
             return t.id !== id
         })
@@ -44,7 +51,11 @@ export const Todolist = () => {
         <Todolistsection>
             <Container>
                 <FlexWrapper direction={'row'} justify={'space-between'}>
-                    <TodolistApp title={text1} todolist={todoForTodolist} removeTasks={removeTasks} changeFilter={changeFilter} />
+                    <TodolistApp title={text1}
+                                 todolist={todoForTodolist}
+                                 removeTasks={removeTasks}
+                                 changeFilter={changeFilter}
+                                 addTasks={addTasks}/>
                  </FlexWrapper>
             </Container>
 

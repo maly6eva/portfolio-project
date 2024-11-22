@@ -1,52 +1,88 @@
-import React from 'react';
+import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
 import styled from "styled-components";
 import {FilterValues} from "./Todolist";
 
 type TodolistPropsType = {
-    id: number,
+    id: string,
     skil: string,
-    isDone: boolean,
-
-
+    isDone: boolean
 }
 
 type TodolistAppType = {
     title: string,
     todolist: TodolistPropsType[]
-    removeTasks: (id: number) => void
+    removeTasks: (id: string) => void
     changeFilter: (value: FilterValues) => void
+    addTasks: (title: string) => void
 }
 
-export const TodolistApp = ({title, todolist, removeTasks, changeFilter}: TodolistAppType) => {
+export const TodolistApp = ({title, todolist, removeTasks, changeFilter, addTasks}: TodolistAppType) => {
+    const [taskTitle, setTaskTitle] = useState('')
 
-    const todo = todolist.map((el) => {
+    const changeFilterHandler = (value: FilterValues) => changeFilter(value)
+    const onAddTask = () => {
+        addTasks(taskTitle)
+        setTaskTitle('')
+    }
+    const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            onAddTask()
+        }
+    }
+
+    const onChangeHandler = ((e: ChangeEvent<HTMLInputElement>) => setTaskTitle(e.currentTarget.value))
+
+
+    const todo = todolist.map((el: TodolistPropsType) => {
+        const removeTasksHandler = () => {
+            removeTasks(el.id)
+        }
         return (
             <>
                 <li key={el.id}>
                     <input type="checkbox" checked={el.isDone}/> <span>{el.skil}</span>
-                    <button onClick={() => {removeTasks(el.id)}}>x
+                    <button onClick={() => {
+                        removeTasks(el.id)
+                    }}>x
                     </button>
                 </li>
-
             </>
         )
     })
+
+    function handleAddTask(e: React.SyntheticEvent<HTMLButtonElement> | KeyboardEvent<HTMLInputElement>) {
+        e.preventDefault();
+        addTasks(taskTitle);
+        setTaskTitle('')
+    }
 
     return (
         <div>
             <TodolistAp>
                 <h3>{title}</h3>
                 <Inputdiv>
-                    <input/>
-                    <button>+</button>
+                    <input value={taskTitle}
+                           onChange={onChangeHandler}
+                           onKeyUp={onKeyDownHandler}/>
+                    <button onClick={handleAddTask}>+
+                    </button>
                 </Inputdiv>
                 <ul>
                     {todo}
                 </ul>
                 <ButtonDiv>
-                    <button onClick={() => { changeFilter('All')}}>All</button>
-                    <button onClick={() => { changeFilter('Active')}}>Active</button>
-                    <button onClick={() => { changeFilter('Completed')}}>Completed</button>
+                    <button onClick={() => {
+                        changeFilterHandler('All')
+                    }}>All
+                    </button>
+                    <button onClick={() => {
+                        changeFilterHandler('Active')
+                    }}>Active
+                    </button>
+                    <button onClick={() => {
+                        changeFilterHandler('Completed')
+                    }}>Completed
+                    </button>
                 </ButtonDiv>
             </TodolistAp>
         </div>
